@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Navigation } from './components/Navigation';
 import { Home } from './routes/Home';
-import { PokemonDetails } from './routes/PokemonDetails';
+import { PokemonDetail } from './routes/PokemonDetails';
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
   const shouldCallAPI = useRef(true);
@@ -30,7 +30,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home pokemonList={pokemonList} />} />
-          <Route path="/:name" element={<PokemonDetails />} />
+          <Route path="/:name" element={<PokemonDetails}
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

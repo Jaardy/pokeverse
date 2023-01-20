@@ -21,9 +21,7 @@ function App() {
         });
     }
   }, []);
-  if (!pokemonList.length) {
-    return <div>Loading...</div>;
-  }
+
   return (
     <React.StrictMode>
       <BrowserRouter>
