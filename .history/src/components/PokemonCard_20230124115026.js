@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import styles from './PokemonCard.module.css';
 
@@ -21,7 +20,7 @@ function PokemonCard({ url, name }) {
     <Card style={{ width: '18rem' }} className="mx-auto">
       <Card.Img width="286" height="286" bg="dark" variant="top" src={pokemon?.sprites.front_default} />
       <Card.Body>
-        <Link to={name}>
+        <Link>
           <Card.Title>{name.toUpperCase()}</Card.Title>
         </Link>
         <Card.Text as="div">

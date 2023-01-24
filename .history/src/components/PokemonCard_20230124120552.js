@@ -21,7 +21,7 @@ function PokemonCard({ url, name }) {
     <Card style={{ width: '18rem' }} className="mx-auto">
       <Card.Img width="286" height="286" bg="dark" variant="top" src={pokemon?.sprites.front_default} />
       <Card.Body>
-        <Link to={name}>
+        <Link to="Steve">
           <Card.Title>{name.toUpperCase()}</Card.Title>
         </Link>
         <Card.Text as="div">

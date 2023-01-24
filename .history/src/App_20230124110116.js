@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from './routes/Home';
-import { PokemonDetails } from './routes/PokemonDetails';
 import { Navigation } from './components/Navigation';
 
 function App() {
@@ -24,8 +22,8 @@ function App() {
       <Navigation />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home pokemonList={pokemonList} />} />
-          <Route path="/:name" element={<PokemonDetails />} />
+          <Route />
+          <Route />
         </Routes>
       </BrowserRouter>
     </div>

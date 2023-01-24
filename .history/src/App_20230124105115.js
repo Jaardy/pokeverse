@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from './routes/Home';
-import { PokemonDetails } from './routes/PokemonDetails';
 import { Navigation } from './components/Navigation';
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/?limit=150')
@@ -19,13 +19,17 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    setFilteredPokemon(pokemonList.filter((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase())));
+  }, [search, pokemonList]);
+
   return (
     <div data-testid="app">
       <Navigation />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home pokemonList={pokemonList} />} />
-          <Route path="/:name" element={<PokemonDetails />} />
+          <Route />
+          <Route />
         </Routes>
       </BrowserRouter>
     </div>
