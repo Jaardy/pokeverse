@@ -8,7 +8,7 @@ import { Navigation } from './components/Navigation';
 import { Home, PokemonDetails, Favourites } from './routes';
 
 export const FavouritesContext = createContext();
-A;
+
 function App() {
   const [favourites, setFavourites] = useState([]);
   function addFavourites(name) {

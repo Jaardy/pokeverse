@@ -35,15 +35,9 @@ function PokemonCard({ url, name }) {
             ))}
           </ul>
         </Card.Text>
-        {favourites.includes(name) ? (
-          <Button variant="danger" onClick={() => removeFavourites(name)}>
-            Remove from Favourites
-          </Button>
-        ) : (
-          <Button variant="primary" onClick={() => addFavourites(name)}>
-            Add to Favourites
-          </Button>
-        )}
+        <Button variant="primary" onClick={() => addFavourites(name)}>
+          Add to Favourites
+        </Button>
       </Card.Body>
     </Card>
   );

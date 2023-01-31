@@ -2,23 +2,20 @@ import React, { useEffect, useState, useRef, createContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Navigation } from './components/Navigation';
-// import { Home } from './routes/Home';
-// import { PokemonDetails } from './routes/PokemonDetails';
-// import { Favourites } from './routes/Favourites';
-import { Home, PokemonDetails, Favourites } from './routes';
+import { Home } from './routes/Home';
+import { PokemonDetails } from './routes/PokemonDetails';
 
 export const FavouritesContext = createContext();
-A;
+
 function App() {
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState();
   function addFavourites(name) {
-    console.log('Added: ', name);
     setFavourites([...favourites, name]);
   }
   function removeFavourites(name) {
     setFavourites(
       favourites.filter((favourite) => {
-        return name !== favourite;
+        return name != favourite;
       })
     );
   }
@@ -49,10 +46,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home pokemonList={pokemonList} />} />
             <Route path="/:name" element={<PokemonDetails />} />
-            <Route
-              path="/favourites"
-              element={<Favourites pokemonList={pokemonList.filter((pokemon) => favourites.includes(pokemon.name))} />}
-            />
+            <Route path="/favourites" element={<div>Favourites</div>} />
           </Routes>
         </BrowserRouter>
       </FavouritesContext.Provider>

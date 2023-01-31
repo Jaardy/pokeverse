@@ -18,9 +18,6 @@ function Navigation() {
           <Nav.Link as={Link} to="/">
             All Pokemon
           </Nav.Link>
-          <Nav.Link as={Link} to="/favourites">
-            Favourites
-          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
