@@ -14,7 +14,7 @@ export default function App() {
   function removeFavourite(name) {
     setFavourites(
       favourites.filter((fav) => {
-        return name !== fav;
+        name !== fav;
       })
     );
   }
@@ -38,21 +38,19 @@ export default function App() {
     return <div>Loading...</div>;
   }
   return (
-    <React.StrictMode>
-      <FavouritesContext.Provider value={{ favourites, addFavourite, removeFavourite }}>
-        <BrowserRouter>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Home pokemonList={pokemonList} />} />
-            <Route path="/:name" element={<PokemonDetails />} />
-            <Route
-              path="/favourites"
-              element={<Favourites pokemonList={pokemonList.filter((p) => favourites.includes(p.name))} />}
-            />
-          </Routes>
-        </BrowserRouter>
-      </FavouritesContext.Provider>
-    </React.StrictMode>
+    <FavouritesContext.Provider value={{ favourites, addFavourite, removeFavourite }}>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home pokemonList={pokemonList} />} />
+          <Route path="/:name" element={<PokemonDetails />} />
+          <Route
+            path="/favourites"
+            element={<Favourites pokemonList={pokemonList.filter((p) => favourites.includes(p.name))} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </FavouritesContext.Provider>
   );
 }
 

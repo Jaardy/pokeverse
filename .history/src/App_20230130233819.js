@@ -12,9 +12,17 @@ export default function App() {
     setFavourites([...favourites, favourite]);
   }
   function removeFavourite(name) {
+    console.log(
+      setFavourites(
+        favourites.filter((fav) => {
+          name !== fav;
+        })
+      )
+    );
+
     setFavourites(
       favourites.filter((fav) => {
-        return name !== fav;
+        name !== fav;
       })
     );
   }

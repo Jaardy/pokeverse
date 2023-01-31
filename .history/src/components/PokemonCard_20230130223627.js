@@ -7,6 +7,7 @@ import styles from './PokemonCard.module.css';
 function PokemonCard({ url, name }) {
   const [pokemon, setPokemon] = useState(null);
   const { favourites, addFavourite, removeFavourite } = useContext(FavouritesContext);
+  console.log(favourites);
 
   useEffect(() => {
     fetch(url)

@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Navigation } from './components/Navigation';
 import { Home, PokemonDetails, Favourites } from './routes';
+// import { Home } from './routes/Home';
+// import { PokemonDetails } from './routes/PokemonDetails';
 
 export const FavouritesContext = createContext();
 
@@ -14,7 +16,7 @@ export default function App() {
   function removeFavourite(name) {
     setFavourites(
       favourites.filter((fav) => {
-        return name !== fav;
+        name !== fav;
       })
     );
   }

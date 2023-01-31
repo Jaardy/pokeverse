@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { FavouritesContext } from '../App';
 import { Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
 import styles from './PokemonCard.module.css';
 
 function PokemonCard({ url, name }) {
   const [pokemon, setPokemon] = useState(null);
-  const { favourites, addFavourite, removeFavourite } = useContext(FavouritesContext);
 
   useEffect(() => {
     fetch(url)
@@ -37,13 +35,9 @@ function PokemonCard({ url, name }) {
           </ul>
         </Card.Text>
         {favourites.includes(name) ? (
-          <Button variant="danger" onClick={() => removeFavourite(name)}>
-            Remove from Favourites
-          </Button>
-        ) : (
-          <Button variant="primary" onClick={() => addFavourite(name)}>
-            Add to Favourites
-          </Button>
+          <Button variant='danger' onClick={() => removeF}
+        ): (
+
         )}
       </Card.Body>
     </Card>

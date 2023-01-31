@@ -14,7 +14,7 @@ export default function App() {
   function removeFavourite(name) {
     setFavourites(
       favourites.filter((fav) => {
-        return name !== fav;
+        name !== fav;
       })
     );
   }

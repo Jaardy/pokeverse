@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Navigation } from './components/Navigation';
 import { Home, PokemonDetails, Favourites } from './routes';
+// import { Home } from './routes/Home';
+// import { PokemonDetails } from './routes/PokemonDetails';
 
 export const FavouritesContext = createContext();
 
@@ -14,7 +16,7 @@ export default function App() {
   function removeFavourite(name) {
     setFavourites(
       favourites.filter((fav) => {
-        return name !== fav;
+        name !== fav;
       })
     );
   }
@@ -39,8 +41,8 @@ export default function App() {
   }
   return (
     <React.StrictMode>
-      <FavouritesContext.Provider value={{ favourites, addFavourite, removeFavourite }}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <FavouritesContext.Provider value={{ favourites, addFavourite, removeFavourite }}>
           <Navigation />
           <Routes>
             <Route path="/" element={<Home pokemonList={pokemonList} />} />
@@ -50,8 +52,8 @@ export default function App() {
               element={<Favourites pokemonList={pokemonList.filter((p) => favourites.includes(p.name))} />}
             />
           </Routes>
-        </BrowserRouter>
-      </FavouritesContext.Provider>
+        </FavouritesContext.Provider>
+      </BrowserRouter>
     </React.StrictMode>
   );
 }
